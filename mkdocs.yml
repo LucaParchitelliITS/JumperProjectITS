@@ -1,0 +1,8 @@
+site_name: Progetto Jumper ITS
+
+nav:
+  - Indice: index.md
+  - Descrizione del progetto: prova.md
+
+theme:
+  name: material 
