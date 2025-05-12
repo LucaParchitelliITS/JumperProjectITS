@@ -3,6 +3,7 @@ site_name: Progetto Jumper ITS
 nav:
   - Indice: index.md
   - Descrizione del progetto: descrizione.md
+  - Requisiti: requisiti2.md
 
 theme:
   name: material 
