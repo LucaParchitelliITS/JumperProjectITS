@@ -1,12 +1,3 @@
-site_name: Progetto Jumper ITS
-
-nav:
-  - Indice: index.md
-  - Descrizione del progetto: descrizione.md
-
-theme:
-  name: material 
-
 markdown_extensions:
   - admonition # notes make pretty
   - attr_list
