@@ -1,11 +1,16 @@
 # JUMPER
 
-## User Story
+## User Stories
 
-- Come giocatore, voglio controllare un personaggio che salta per superare ostacoli e che cade, se non interagisco con esso.
-- Come giocatore, il mio obiettivo è raggiungere il punteggio più alto possibile (gioco potenzialmente infinito).
-- Come giocatore, voglio poter confrontare il mio punteggio con altri giocatori online.
-- Come giocatore, voglio poter interrompere e/o riavviare la partita in qualsiasi momento.
+### Sistema
+- *Come Giocatore*, voglio poter iniziare una partita, aprire la Classifica o uscire dal gioco tramite pulsante
+- *Come Giocatore*, voglio poter visualizzare la Classifica Locale, Globale e Personale con i migliori punteggi registrati
+- *Come Giocatore*, voglio poter gestire l'account, accedendo, modificando il nome visualizzato online e disconnettendo l'account 
+
+### In Game
+- *Come Giocatore*, voglio poter muovere un personaggio facendolo saltare con un input tramite tastiera/mouse/touchscreen, per superare ostacoli presenti sulla mappa.
+- *Come Giocatore*, voglio che il mio personaggio si muova in automatico orizzontalmente a una data velocità, e che cada verso il basso in assenza di input
+- *Come Giocatore*, voglio poter fermare il gioco tramite un pulsante per uscire, riprendere e/o riavviare la partita in qualsiasi momento.
 
 ---
 
@@ -18,33 +23,54 @@
     - **Descrizione:** L'utente tocca lo schermo, clicca il tasto di salto, usa il mouse o preme il tasto Space per far saltare il personaggio.
     - **Precondizioni:** Il gioco è avviato e il personaggio è visibile sullo schermo.
     - **Flusso principale:**
-        1. L'utente interagisce con il dispositivo (touch, mouse o tastiera).
-        2. Il personaggio salta.
-        3. Se non ci sono interazioni, il personaggio cade a causa della gravità.
-    - **Postcondizioni:** Il personaggio si muove in base all'input dell'utente.
+        1. Se l'utente interagisce con il dispositivo (touch, mouse o tastiera), il personaggio salta.
+        2. In assenza di input, il personaggio subisce un accelerazione a causa della gravità.
+        3. Se viene superato un ostacolo, i punti aumentano
+        4. I punti 1-3 si ripetono finchè non si verifica una condizione di termine
+        5. In caso di collisione con un ostacolo, si verifica una schermata di "Game Over" che mostra il punteggio fatto
+    - **Flusso alternativo:**
+        1. L'utente clicca sul pulsante di Pausa, fermando il gioco
+        2. L'utente può:
+            1. Riprendere la partita
+            2. Riavviare la partita
+            3. Tornare al Menù Principale
+    - **Postcondizioni:** Il gioco è fermo e il giocatore torna al menù principale
 
-### Obiettivi di Gioco
 
-- **Caso d'uso:** Superare gli ostacoli
+### Visualizzazione Classifica
+
+- **Caso d'Uso:** Visualizzare la Classifica
     - **Attore:** Utente
-    - **Descrizione:** L'utente cerca di superare gli ostacoli senza toccarli.
-    - **Precondizioni:** Il gioco è in corso.
+    - **Descrizione:** L'utente controlla i punteggi salvati nella Classifica Personale, Locale e Globale
+    - **Trigger:** Il giocatore seleziona tramite pulsante la visualizzazione della Classifica
+    - **Precondizioni:** Il dispositivo ha accesso alla rete
     - **Flusso principale:**
-        1. L'utente controlla il personaggio per evitare gli ostacoli.
-        2. Se l'utente supera un ostacolo, il punteggio aumenta.
-    - **Postcondizioni:** Il punteggio dell'utente è aggiornato.
+        1. Se non è connesso alcun account:
+            1. L'utente visualizza la schermata di accesso all'account
+            2. L'utente può fare l'accesso o tornare al Menù Principale
+        2. L'utente può:
+            1. Visualizzare la Classifica Globale che mostra nomi e punteggi in ordine decrescente di tutti i punteggi salvati dai giocatori online
+            2. Visualizzare la Classifica Locale che mostra nomi e punteggi in ordine decrescente di tutti i punteggi salvati dai giocatori online del proprio Stato
+            3. Visualizzare la Classifica Personale che mostra nomi e punteggi in ordine decrescente di tutti i punteggi salvati dal proprio account
+        3. L'utente esce dalla schermata della Classifica e torna al menù principale
 
-### Feedback Visivo e Sonoro
 
-- **Caso d'uso:** Ricevere feedback dopo una collisione
+### Gestione Account
+
+#### *NOTA*
+Per semplificare, analizzeremo solo il Caso d'Uso della Modifica dell'account, ignorando Accesso e Disconnessione dall'account
+- **Caso d'Uso:** Modificare l'account
     - **Attore:** Utente
-    - **Descrizione:** L'utente riceve feedback visivo e sonoro quando collide con un ostacolo.
-    - **Precondizioni:** Il gioco è in corso e l'utente ha colliso con un ostacolo.
-    - **Flusso principale:**
-        1. L'utente collide con un ostacolo.
-        2. Viene riprodotto un effetto sonoro di collisione.
-        3. Viene visualizzata una schermata di Game Over.
-    - **Postcondizioni:** Il gioco è in pausa e l'utente può riavviarlo.
+    - **Descrizione:** L'utente gestisce le informazioni dell'account, come la mail connessa e il nome visualizzato online
+    - **Trigger:** L'utente clicca seleziona tramite pulsante l'account
+    - **Precondizioni:** L'utente ha effettuato l'accesso all'account
+    - **Flusso Principale:**
+        1. L'utente visualizza la mail attualmente connessa e il nome visualizzato online
+        2. L'utente modifica il nome visualizzato online
+        3. L'utente esce dalla schermata della gestione dell'account e torna al Menù Principale
+    - **Postcondizioni:** Il gioco è fermo e la Classifica viene aggiornata
+
+
 
 ```mermaid
 flowchart TD
