@@ -81,6 +81,28 @@ flowchart TD
         3. L'utente esce dalla schermata della Classifica e torna al menù principale
 
 
+```mermaid
+flowchart TD
+    A["Inizio: Dispositivo connesso a Internet"] --> B["Utente seleziona Visualizza Classifica"]
+    B --> C@{ label: "Utente connesso all'account?" }
+    F["Visualizza Classifica Globale"] <--> G["Visualizza Classifica Locale"]
+    G <--> H["Visualizza Classifica Personale"]
+    H <--> F
+    C --> n2["si"] & n3["no"]
+    n2 --> n1[" "]
+    n1 --> I["Utente torna al Menu Principale"]
+    n3 --> D["Mostra schermata di accesso"]
+    D --> n4@{ label: "l'utente accede?" }
+    n4 --> n5["si"] & n6["no"]
+    n5 --> C
+    n6 --> I
+    C@{ shape: diamond}
+    n1@{ shape: rounded}
+    n4@{ shape: diam}
+    style n1 fill:transparent
+```
+
+
 ### Gestione Account
 
 #### *NOTA*
@@ -97,26 +119,16 @@ Per semplificare, analizzeremo solo il Caso d'Uso della Modifica dell'account, i
     - **Postcondizioni:** Il gioco è fermo e la Classifica viene aggiornata
 
 
-
 ```mermaid
 flowchart TD
-    start((Inizio))
-    start --> |"L'utente tocca lo schermo"| salto["Il personaggio salta"]
-    salto --> decisione{Interazione continua?}
-    decisione -->|No| caduta["Il personaggio cade per gravità"]
-    caduta --> fine((Fine))
-    decisione -->|Si| salto
-    
-    start --> evita_ostacolo["L'utente cerca di superare gli ostacoli"]
-    evita_ostacolo -->|Superato| punteggio["Punteggio aumenta"]
-    punteggio --> fine
-    
-    start --> collisione["L'utente collide con un ostacolo"]
-    collisione --> audio["Effetto sonoro di collisione"]
-    collisione --> schermata["Schermata di Game Over"]
-    schermata --> fine
-    audio --> fine
+    A["Inizio: Utente loggato"] --> B["Utente seleziona Gestione Account"]
+    B --> C["Visualizza mail e nome visualizzato"]
+    E["Esce dalla schermata di gestione account"] --> F["Menu Principale"]
+    C <--> D["Modifica nome visualizzato online"]
+    C --> E
+    F --> H["Classifica aggiornata"]
 ```
+
 
 ## Requisiti Funzionali
 
