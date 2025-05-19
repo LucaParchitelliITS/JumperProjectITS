@@ -34,8 +34,34 @@
             1. Riprendere la partita
             2. Riavviare la partita
             3. Tornare al Menù Principale
+            4. Mutare/Smutare l'audio del gioco
     - **Postcondizioni:** Il gioco è fermo e il giocatore torna al menù principale
 
+
+```mermaid
+flowchart TD
+    n1["Inizio"] --> n2["Il personaggio collide con un ostacolo?"]
+    n2 -- SI --> n3["Schermata Game Over"]
+    n2 -- NO --> n5@{ label: "L'utente interagisce?" }
+    n5 -- NO --> n4["Il personaggio cade verso il basso"]
+    n5 -- SI --> n7@{ label: "L'utente clicca sul pulsante Pausa?" }
+    n7 -- SI --> n8["Schermata di Pausa"]
+    n7 -- NO --> n6["Il personaggio salta"]
+    n4 --> n2
+    n6 --> n2
+    n8 --> n15["Riprende il Gioco?"] & n17["Uscire dal gioco?"]
+    n3 --> n16["Menù Principale"]
+    n15 -- SI --> n2
+    n15 -- NO --> n8
+    n17 -- SI --> n16
+    n17 -- NO --> n8
+    n1@{ shape: rect}
+    n2@{ shape: diam}
+    n5@{ shape: diam}
+    n7@{ shape: diam}
+    n15@{ shape: diam}
+    n17@{ shape: diam}
+```
 
 ### Visualizzazione Classifica
 
@@ -94,45 +120,46 @@ flowchart TD
 
 ## Requisiti Funzionali
 
-- **Menu e Navigazione:**
-    - Il menu principale deve essere semplice e minimalistico, per poter accedere a tutte le opzioni.
-    - Deve esserci un pulsante di pausa durante il gioco per consentire all'utente di interrompere la partita.
+- FR1: Controlli e Movimento
+    1. Il sistema deve far subire al personaggio un accelerazione verso il basso in assenza di input dall'utente 
+    2. Il sistema deve permettere al giocatore di muovere il proprio personaggio verso l'alto, attraverso dispositivi di input (tastiera, mouse, touchscreen)
+    
+- FR2: Gestione collisioni
+    1. Il sistema deve gestire le collisioni con gli ostacoli fermando il gioco e mostrando la schermata di Game Over
+    2. Il sistema deve individuare gli ostacoli superati e aumentare il punteggio della partita corrente
 
-- **Controllo del Gioco:**
-    - L'Utente deve poter controllare il personaggio toccando lo schermo (per smartphone) o cliccando il tasto di salto (per controller) o cliccando col mouse o usando tasto Space (per tastiera del computer) per farlo saltare.
-    - Il personaggio deve cadere a causa della gravità quando non ci sono interazioni da parte dell'Utente.
+- FR3: Stato del gioco
+    1. Il sistema deve fermare e salvare lo stato della partita quando il giocatore clicca sul pulsante Pausa
+    2. Il sistema deve tenere traccia del punteggio della partita corrente e salvarlo nella Classifica a fine partita
+    3. Il sistema deve permettere di mutare e smutare l'audio del gioco tramite apposito pulsante
 
-- **Obiettivi di Gioco:**
-    - L'Utente deve cercare di superare gli ostacoli senza toccarli.
-    - Il punteggio deve aumentare ogni volta che l'utente supera un ostacolo. Non c'è un punteggio massimo. Il gioco può, potenzialmente, continuare all'infinito.
+- FR4: Gestione account
+    1. Il sistema deve permettere l'accesso tramite mail a un account
+    2. Il sistema deve collegare i punteggi salvati all'account collegato
+    3. Il sistema deve permettere la modifica del nome dell'account collegato visualizzato online dagli altri utenti
+    
+- FR5: Gestione Classifica
+    1. Il sistema deve ordinare in senso decrescente e far visualizzare una Classifica Globale, Locale o Personale con i punteggi salvati dagli account online
 
-- **Feedback Visivo e Sonoro:**
-    - L'Utente deve ricevere feedback visivo (ad esempio, animazioni) e sonoro quando collide contro un ostacolo (schermata di Game Over).
-    - Quando supera un ostacolo, riceve feedback sonoro e il punteggio aumenta.
-
-- **Punteggio e Classifiche:**
-    - L'Utente deve poter visualizzare il punteggio attuale e il punteggio migliore.
-    - Se l'User è connesso online, può visualizzare il suo punteggio nella Classifica Globale e confrontarlo con punteggi degli altri giocatori.
-
-- **Opzioni di Gioco:**
-    - L'Utente deve avere la possibilità di riavviare il gioco dopo una collisione.
-    - L'Utente deve poter accedere a un menu principale per iniziare una nuova partita, visualizzare le impostazioni e accedere alla Classifica Globale.
-
----
+- FR6: User Interface
+    1. Il sistema deve fornire un Menù Principale visualizzabile ad avvio del gioco, con la possibilità di avviare la partita, visualizzare la classifica, chiudere il gioco o gestire/accedere all'account
+    2. Il sistema deve fornire una schermata di Pausa accessibile durante la partita
+    3. Il sistema deve permettere di visualizzare il punteggio attuale durante la partita corrente
 
 ## Requisiti Non Funzionali
 
-- **Design Visivo:**
-    - L'interfaccia deve avere un design accattivante e che non stanchi gli occhi.
-    - Gli elementi dell'interfaccia devono essere ben visibili e facilmente leggibili.
+- NFR1: Prestazioni
+    1. Il gioco dovrà mantenere un frame rate costante di almeno 60 fps
+    2. Il consumo delle risorse disponibili dovrà essere minimo
 
-- **Prestazioni:**
-    - Il gioco deve caricarsi rapidamente e funzionare senza lag su tutti i dispositivi, mantenendo un frame rate fluido durante il gioco.
+- NFR2: Usabilità
+    1. Tutti gli elementi dell'interfaccia utente (Pausa, punteggio) visualizzabili in gioco dovranno essere chiari, leggibili, dovranno risaltare rispetto allo sfondo e non coprire la parte centrale dello schermo
+    2. L'input dovrà risultare il più reattivo possibile, riducendo il più possibile la latenza
+    3. 
 
-- **Compatibilità:**
-    - Il gioco deve essere compatibile con le principali piattaforme di gioco.
+- NFR3: Affidabilità e Stabilità
+    1. Il calcolo del punteggio dovrà risultare costante e aggiornato coerentemente al superamento degli ostacoli
 
-- **Usabilità:**
-    - L'interfaccia deve essere intuitiva e facile da usare e le istruzioni di gioco devono essere chiare e facilmente accessibili.
-
+- NFR4: Manutenibilità
+    1. 
 ---
