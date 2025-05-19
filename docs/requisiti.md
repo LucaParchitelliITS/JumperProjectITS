@@ -161,17 +161,18 @@ flowchart TD
 ## Requisiti Non Funzionali
 
 - NFR1: Prestazioni
-    1. Il gioco dovrà mantenere un frame rate costante di almeno 60 fps
-    2. Il consumo delle risorse disponibili dovrà essere minimo
+    1. Il gioco deve mantenere un frame rate costante di almeno 60 fps
+    2. Il consumo delle risorse disponibili deve essere minimo
 
 - NFR2: Usabilità
     1. Tutti gli elementi dell'interfaccia utente (Pausa, punteggio) visualizzabili in gioco dovranno essere chiari, leggibili, dovranno risaltare rispetto allo sfondo e non coprire la parte centrale dello schermo
-    2. L'input dovrà risultare il più reattivo possibile, riducendo il più possibile la latenza
-    3. 
+    2. L'input deve risultare il più reattivo possibile, riducendo il più possibile la latenza
 
-- NFR3: Affidabilità e Stabilità
-    1. Il calcolo del punteggio dovrà risultare costante e aggiornato coerentemente al superamento degli ostacoli
+- NFR3: Portabilità
+    1. La gestione degli input deve essere flessibile, adattabile a diversi tipi di dispositivi
+    2. Il motore di gioco deve essere scelto considerando la possibilità di porting su dispositivi mobili
 
-- NFR4: Manutenibilità
-    1. 
+- NFR4: Sicurezza
+    1. I dati personali degli account dovranno essere protetti
+
 ---
