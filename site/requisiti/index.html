@@ -1,0 +1,808 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../descrizione/">
+      
+      
+        <link rel="next" href="../flowchart/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
+    
+    
+      
+        <title>Requisiti - Progetto Jumper ITS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#jumper" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Progetto Jumper ITS" class="md-header__button md-logo" aria-label="Progetto Jumper ITS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Progetto Jumper ITS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Requisiti
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Progetto Jumper ITS" class="md-nav__button md-logo" aria-label="Progetto Jumper ITS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Progetto Jumper ITS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Indice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../descrizione/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Descrizione del progetto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Requisiti
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Requisiti
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#user-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Stories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sistema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      In Game
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casi-duso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casi d'Uso
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Casi d&#39;Uso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controllo-del-gioco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controllo del Gioco
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizzazione-classifica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualizzazione Classifica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestione-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestione Account
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisiti-funzionali" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisiti Funzionali
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisiti-non-funzionali" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisiti Non Funzionali
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flowchart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flowchart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrammi_di_sequenza/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diagrammi di sequenza
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../classi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Classi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#user-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Stories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sistema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      In Game
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casi-duso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casi d'Uso
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Casi d&#39;Uso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controllo-del-gioco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controllo del Gioco
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizzazione-classifica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualizzazione Classifica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestione-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestione Account
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisiti-funzionali" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisiti Funzionali
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisiti-non-funzionali" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisiti Non Funzionali
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="jumper">JUMPER<a class="headerlink" href="#jumper" title="Permanent link">&para;</a></h1>
+<h2 id="user-stories">User Stories<a class="headerlink" href="#user-stories" title="Permanent link">&para;</a></h2>
+<h3 id="sistema">Sistema<a class="headerlink" href="#sistema" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>Come Giocatore</em>, voglio poter iniziare una partita, aprire la Classifica o uscire dal gioco tramite pulsante</li>
+<li><em>Come Giocatore</em>, voglio poter visualizzare la Classifica Locale, Globale e Personale con i migliori punteggi registrati</li>
+<li><em>Come Giocatore</em>, voglio poter gestire l'account, accedendo, modificando il nome visualizzato online e disconnettendo l'account </li>
+</ul>
+<h3 id="in-game">In Game<a class="headerlink" href="#in-game" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>Come Giocatore</em>, voglio poter muovere un personaggio facendolo saltare con un input tramite tastiera/mouse/touchscreen, per superare ostacoli presenti sulla mappa.</li>
+<li><em>Come Giocatore</em>, voglio che il mio personaggio si muova in automatico orizzontalmente a una data velocità, e che cada verso il basso in assenza di input</li>
+<li><em>Come Giocatore</em>, voglio poter fermare il gioco tramite un pulsante per uscire, riprendere e/o riavviare la partita in qualsiasi momento.</li>
+</ul>
+<hr />
+<h2 id="casi-duso">Casi d'Uso<a class="headerlink" href="#casi-duso" title="Permanent link">&para;</a></h2>
+<h3 id="controllo-del-gioco">Controllo del Gioco<a class="headerlink" href="#controllo-del-gioco" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Caso d'uso:</strong> Controllare il personaggio<ul>
+<li><strong>Attore:</strong> Utente</li>
+<li><strong>Descrizione:</strong> L'utente tocca lo schermo, clicca il tasto di salto, usa il mouse o preme il tasto Space per far saltare il personaggio.</li>
+<li><strong>Precondizioni:</strong> Il gioco è avviato e il personaggio è visibile sullo schermo.</li>
+<li><strong>Flusso principale:</strong><ol>
+<li>Se l'utente interagisce con il dispositivo (touch, mouse o tastiera), il personaggio salta.</li>
+<li>In assenza di input, il personaggio subisce un accelerazione a causa della gravità.</li>
+<li>Se viene superato un ostacolo, i punti aumentano</li>
+<li>I punti 1-3 si ripetono finchè non si verifica una condizione di termine</li>
+<li>In caso di collisione con un ostacolo, si verifica una schermata di "Game Over" che mostra il punteggio fatto</li>
+</ol>
+</li>
+<li><strong>Flusso alternativo:</strong><ol>
+<li>L'utente clicca sul pulsante di Pausa, fermando il gioco</li>
+<li>L'utente può:<ol>
+<li>Riprendere la partita</li>
+<li>Riavviare la partita</li>
+<li>Tornare al Menù Principale</li>
+<li>Mutare/Smutare l'audio del gioco</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><strong>Postcondizioni:</strong> Il gioco è fermo e il giocatore torna al menù principale</li>
+</ul>
+</li>
+</ul>
+<h3 id="visualizzazione-classifica">Visualizzazione Classifica<a class="headerlink" href="#visualizzazione-classifica" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Caso d'Uso:</strong> Visualizzare la Classifica<ul>
+<li><strong>Attore:</strong> Utente</li>
+<li><strong>Descrizione:</strong> L'utente controlla i punteggi salvati nella Classifica Personale, Locale e Globale</li>
+<li><strong>Trigger:</strong> Il giocatore seleziona tramite pulsante la visualizzazione della Classifica</li>
+<li><strong>Precondizioni:</strong> Il dispositivo ha accesso alla rete</li>
+<li><strong>Flusso principale:</strong><ol>
+<li>Se non è connesso alcun account:<ol>
+<li>L'utente visualizza la schermata di accesso all'account</li>
+<li>L'utente può fare l'accesso o tornare al Menù Principale</li>
+</ol>
+</li>
+<li>L'utente può:<ol>
+<li>Visualizzare la Classifica Globale che mostra nomi e punteggi in ordine decrescente di tutti i punteggi salvati dai giocatori online</li>
+<li>Visualizzare la Classifica Locale che mostra nomi e punteggi in ordine decrescente di tutti i punteggi salvati dai giocatori online del proprio Stato</li>
+<li>Visualizzare la Classifica Personale che mostra nomi e punteggi in ordine decrescente di tutti i punteggi salvati dal proprio account</li>
+</ol>
+</li>
+<li>L'utente esce dalla schermata della Classifica e torna al menù principale</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="gestione-account">Gestione Account<a class="headerlink" href="#gestione-account" title="Permanent link">&para;</a></h3>
+<h4 id="nota"><em>NOTA</em><a class="headerlink" href="#nota" title="Permanent link">&para;</a></h4>
+<p>Per semplificare, analizzeremo solo il Caso d'Uso della Modifica dell'account, ignorando Accesso e Disconnessione dall'account<br />
+- <strong>Caso d'Uso:</strong> Modificare l'account<br />
+    - <strong>Attore:</strong> Utente<br />
+    - <strong>Descrizione:</strong> L'utente gestisce le informazioni dell'account, come la mail connessa e il nome visualizzato online<br />
+    - <strong>Trigger:</strong> L'utente clicca seleziona tramite pulsante l'account<br />
+    - <strong>Precondizioni:</strong> L'utente ha effettuato l'accesso all'account<br />
+    - <strong>Flusso Principale:</strong><br />
+        1. L'utente visualizza la mail attualmente connessa e il nome visualizzato online<br />
+        2. L'utente modifica il nome visualizzato online<br />
+        3. L'utente esce dalla schermata della gestione dell'account e torna al Menù Principale<br />
+    - <strong>Postcondizioni:</strong> Il gioco è fermo e la Classifica viene aggiornata</p>
+<h2 id="requisiti-funzionali">Requisiti Funzionali<a class="headerlink" href="#requisiti-funzionali" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>FR1: Controlli e Movimento</p>
+<ol>
+<li>Il sistema deve far subire al personaggio un accelerazione verso il basso in assenza di input dall'utente </li>
+<li>Il sistema deve permettere al giocatore di muovere il proprio personaggio verso l'alto, attraverso dispositivi di input (tastiera, mouse, touchscreen)</li>
+</ol>
+</li>
+<li>
+<p>FR2: Gestione collisioni</p>
+<ol>
+<li>Il sistema deve gestire le collisioni con gli ostacoli fermando il gioco e mostrando la schermata di Game Over</li>
+<li>Il sistema deve individuare gli ostacoli superati e aumentare il punteggio della partita corrente</li>
+</ol>
+</li>
+<li>
+<p>FR3: Stato del gioco</p>
+<ol>
+<li>Il sistema deve fermare e salvare lo stato della partita quando il giocatore clicca sul pulsante Pausa</li>
+<li>Il sistema deve tenere traccia del punteggio della partita corrente e salvarlo nella Classifica a fine partita</li>
+<li>Il sistema deve permettere di mutare e smutare l'audio del gioco tramite apposito pulsante</li>
+</ol>
+</li>
+<li>
+<p>FR4: Gestione account</p>
+<ol>
+<li>Il sistema deve permettere l'accesso tramite mail a un account</li>
+<li>Il sistema deve collegare i punteggi salvati all'account collegato</li>
+<li>Il sistema deve permettere la modifica del nome dell'account collegato visualizzato online dagli altri utenti</li>
+</ol>
+</li>
+<li>
+<p>FR5: Gestione Classifica</p>
+<ol>
+<li>Il sistema deve ordinare in senso decrescente e far visualizzare una Classifica Globale, Locale o Personale con i punteggi salvati dagli account online</li>
+</ol>
+</li>
+<li>
+<p>FR6: User Interface</p>
+<ol>
+<li>Il sistema deve fornire un Menù Principale visualizzabile ad avvio del gioco, con la possibilità di avviare la partita, visualizzare la classifica, chiudere il gioco o gestire/accedere all'account</li>
+<li>Il sistema deve fornire una schermata di Pausa accessibile durante la partita</li>
+<li>Il sistema deve permettere di visualizzare il punteggio attuale durante la partita corrente</li>
+</ol>
+</li>
+</ul>
+<h2 id="requisiti-non-funzionali">Requisiti Non Funzionali<a class="headerlink" href="#requisiti-non-funzionali" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>NFR1: Prestazioni</p>
+<ol>
+<li>Il gioco deve mantenere un frame rate costante di almeno 60 fps</li>
+<li>Il consumo delle risorse disponibili deve essere minimo</li>
+</ol>
+</li>
+<li>
+<p>NFR2: Usabilità</p>
+<ol>
+<li>Tutti gli elementi dell'interfaccia utente (Pausa, punteggio) visualizzabili in gioco dovranno essere chiari, leggibili, dovranno risaltare rispetto allo sfondo e non coprire la parte centrale dello schermo</li>
+<li>L'input deve risultare il più reattivo possibile, riducendo il più possibile la latenza</li>
+</ol>
+</li>
+<li>
+<p>NFR3: Portabilità</p>
+<ol>
+<li>La gestione degli input deve essere flessibile, adattabile a diversi tipi di dispositivi</li>
+<li>Il motore di gioco deve essere scelto considerando la possibilità di porting su dispositivi mobili</li>
+</ol>
+</li>
+<li>
+<p>NFR4: Sicurezza</p>
+<ol>
+<li>I dati personali degli account dovranno essere protetti</li>
+</ol>
+</li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
