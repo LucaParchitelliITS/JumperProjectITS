@@ -3,10 +3,10 @@ site_name: Progetto Jumper ITS
 nav:
   - Indice: index.md
   - Descrizione del progetto: descrizione.md
-  - Diagrammi di sequenza: diagrammi_di_sequenza.md
   - Requisiti: requisiti.md
-  - Classi: classi.md
   - Flowchart: flowchart.md
+  - Diagrammi di sequenza: diagrammi_di_sequenza.md
+  - Classi: classi.md
 
 theme:
   name: material 
